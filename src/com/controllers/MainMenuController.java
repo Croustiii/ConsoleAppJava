@@ -3,7 +3,6 @@ package com.controllers;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.controllers.Main.clearScreen;
 
 public class MainMenuController {
 
@@ -16,11 +15,11 @@ public class MainMenuController {
     public void DisplayMainMenu(){
 
         while(true){
-            clearScreen();
+            //clearScreen();
             System.out.println("\n    ******* MAIN MENU *******");
             System.out.println("What is your choice ? Enter a number\n");
-            System.out.println("    (1) ==> Add data from a csv file");
-            System.out.println("    (2) ==> Query the Database");
+            System.out.println("    (1) ==> CSV File Menu");
+            System.out.println("    (2) ==> DataBase Management Menu");
             int inputUser;
 
             try {
@@ -29,9 +28,13 @@ public class MainMenuController {
                 System.out.println("you choose the number : " + inputUser);
 
                 switch (inputUser){
-                    case 1: this.AddCsvFileMenu();
+                    case 1:
+                        System.out.println(" ==> Loading CSV File Menu");
+                        this.AddCsvFileMenu();
                         break;
-                    case 2 :this.QueryDatabaseMenu();
+                    case 2 :
+                        System.out.println(" ==> Loading Database Menu");
+                        this.QueryDatabaseMenu();
                         break;
                     default:
                         System.out.println("You have to enter a number available");
